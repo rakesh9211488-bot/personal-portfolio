@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://rakesh-siripaka-portfolio.pages.dev/sitemap.xml
