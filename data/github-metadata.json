@@ -1,1 +1,165 @@
-{"generatedAt":null,"repositories":[]}
+{
+  "generatedAt": "2026-10-18T13:47:21.029Z",
+  "repositories": [
+    {
+      "owner": "rakesh9211488-bot",
+      "name": "personal-portfolio",
+      "url": "https://github.com/rakesh9211488-bot/personal-portfolio",
+      "description": "Personal portfolio showcasing digital transformation, automation, IT operations, and technology projects",
+      "language": "JavaScript",
+      "updatedAt": "2026-10-18T13:30:00Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "rakesh9211488-bot",
+      "name": "CareerOrbit",
+      "url": "https://github.com/rakesh9211488-bot/CareerOrbit",
+      "description": "AI-assisted career workspace for private CV analysis, job matching, reviewed application drafts and tracking",
+      "language": "TypeScript",
+      "updatedAt": "2026-10-12T00:40:40Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "rakesh9211488-bot",
+      "name": "rakesh9211488-bot",
+      "url": "https://github.com/rakesh9211488-bot/rakesh9211488-bot",
+      "description": "",
+      "language": "",
+      "updatedAt": "2026-10-12T00:20:02Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "rakesh9211488-bot",
+      "name": "TechFarming",
+      "url": "https://github.com/rakesh9211488-bot/TechFarming",
+      "description": "This is an open-source project, there are developer and enthusiast from different part of the world. Here we will be designing an agricultural e-commerce website with some technological functionalities.",
+      "language": "JavaScript",
+      "updatedAt": "2026-10-11T22:22:57Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "job-match-platform",
+      "url": "https://github.com/SiripakaRakesh/job-match-platform",
+      "description": "",
+      "language": "TypeScript",
+      "updatedAt": "2026-06-19T13:28:46Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "booking-system",
+      "url": "https://github.com/SiripakaRakesh/booking-system",
+      "description": "A fully functional booking system",
+      "language": "JavaScript",
+      "updatedAt": "2026-06-19T09:16:10Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "SiripakaRakesh",
+      "url": "https://github.com/SiripakaRakesh/SiripakaRakesh",
+      "description": "",
+      "language": "",
+      "updatedAt": "2026-06-09T12:26:38Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "-financial-data-create-a-ML-model-to-predict-if-the-client-is-high-risk-or-low-risk",
+      "url": "https://github.com/SiripakaRakesh/-financial-data-create-a-ML-model-to-predict-if-the-client-is-high-risk-or-low-risk",
+      "description": "Machine learning algorithm",
+      "language": "Jupyter Notebook",
+      "updatedAt": "2024-07-27T17:49:54Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "AJ-POU_client",
+      "url": "https://github.com/SiripakaRakesh/AJ-POU_client",
+      "description": "This is the client side of Ajeana clothes brand, this uses stack like React JSX, SCSS, CSS, and some external icons, SVG and animation. Most importantly API fetching and putting.",
+      "language": "JavaScript",
+      "updatedAt": "2024-01-05T16:57:54Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "PizzaServer",
+      "url": "https://github.com/SiripakaRakesh/PizzaServer",
+      "description": "backend",
+      "language": "JavaScript",
+      "updatedAt": "2024-01-02T07:03:41Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "PizzaClient",
+      "url": "https://github.com/SiripakaRakesh/PizzaClient",
+      "description": "frontend",
+      "language": "JavaScript",
+      "updatedAt": "2024-01-02T07:01:14Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "OIBSIP",
+      "url": "https://github.com/SiripakaRakesh/OIBSIP",
+      "description": "",
+      "language": "HTML",
+      "updatedAt": "2023-11-13T19:35:03Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "OasisIntershipTasks",
+      "url": "https://github.com/SiripakaRakesh/OasisIntershipTasks",
+      "description": "",
+      "language": "HTML",
+      "updatedAt": "2023-11-13T19:18:33Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "ResponsiveDashboard",
+      "url": "https://github.com/SiripakaRakesh/ResponsiveDashboard",
+      "description": "",
+      "language": "JavaScript",
+      "updatedAt": "2023-10-18T14:28:40Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "Amazon_clone",
+      "url": "https://github.com/SiripakaRakesh/Amazon_clone",
+      "description": "This is a frontend design for an e-commerce website, with Amazon as reference. ",
+      "language": "",
+      "updatedAt": "2023-03-25T05:49:06Z",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "owner": "SiripakaRakesh",
+      "name": "CV",
+      "url": "https://github.com/SiripakaRakesh/CV",
+      "description": "",
+      "language": "HTML",
+      "updatedAt": "2023-03-01T09:17:49Z",
+      "archived": false,
+      "fork": false
+    }
+  ]
+}
