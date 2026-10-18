@@ -1,0 +1,27 @@
+name: Sync public GitHub metadata
+on:
+  schedule:
+    - cron: '17 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/sync-github.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: refresh public GitHub repository metadata'
+          title: 'Update public repository metadata'
+          body: 'Routine metadata only. Review and merge to publish. Featured projects and professional claims are never auto-created.'
+          branch: 'automation/github-metadata'
+          delete-branch: true

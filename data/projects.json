@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "careerorbit",
+    "title": "CareerOrbit",
+    "category": "Workflow automation · Web platform",
+    "summary": "A career workflow platform exploring how job discovery, application preparation and review can connect in one workspace.",
+    "problem": "Job discovery, documents and application tracking often live across disconnected tools.",
+    "approach": "Customized and tested n8n workflows, configured Supabase tables and CV storage, integrated APIs and iterated on workflow outputs.",
+    "contribution": "Workflow customization, Supabase configuration, integration testing, troubleshooting and documentation.",
+    "technologies": [
+      "n8n",
+      "Supabase",
+      "APIs",
+      "Git",
+      "GitHub"
+    ],
+    "repo": "https://github.com/rakesh9211488-bot/CareerOrbit",
+    "featured": true,
+    "image": "/assets/careerorbit-dashboard.webp",
+    "gallery": [
+      {
+        "src": "/assets/careerorbit-dashboard.webp",
+        "caption": "CareerOrbit dashboard running locally during development."
+      },
+      {
+        "src": "/assets/careerorbit-workflow.webp",
+        "caption": "Configured n8n job-matching workflow."
+      },
+      {
+        "src": "/assets/careerorbit-schema.webp",
+        "caption": "Excerpt of Supabase table structure used in the project."
+      }
+    ]
+  },
+  {
+    "slug": "techfarming",
+    "title": "TechFarming",
+    "category": "IoT · Connected agriculture",
+    "summary": "A collaborative sensor-based agriculture prototype with supporting web-platform work.",
+    "problem": "Understanding agricultural conditions requires a reliable connection between physical sensors and useful digital information.",
+    "approach": "Worked in a two-person team across hardware, software and project coordination; contributed to later web-platform enhancements and application/data-flow testing.",
+    "contribution": "Hardware and software collaboration, coordination, testing and web-platform enhancement.",
+    "technologies": [
+      "IoT",
+      "Sensors",
+      "Web platform",
+      "Hardware prototyping"
+    ],
+    "repo": "https://github.com/rakesh9211488-bot/TechFarming",
+    "featured": true,
+    "image": "/assets/techfarming-workspace.webp",
+    "gallery": [
+      {
+        "src": "/assets/techfarming-workspace.webp",
+        "caption": "TechFarming web workspace running locally; sensor hardware connectivity not verified."
+      }
+    ]
+  }
+]
