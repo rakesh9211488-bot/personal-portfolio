@@ -55,7 +55,7 @@ function detail(p){
       <p>${p.summary}</p>
       <div class="case-study-tags" aria-label="Project technologies">${p.technologies.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
       <div class="actions case-study-actions">
-        <a class="btn btn-dark" href="${p.repo}" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a>
+        <a class="btn btn-dark" href="#components">Explore technical components ↓</a>
         <a class="btn btn-case-outline" href="#evidence">See development evidence ↓</a>
       </div>
     </section>
@@ -65,7 +65,7 @@ function detail(p){
     <section class="shell case-study-overview" aria-label="Project at a glance">
       <div><span class="eyebrow">Area</span><strong>${p.category}</strong></div>
       <div><span class="eyebrow">My work</span><strong>${career?'Workflow configuration & testing':'Collaborative prototyping & testing'}</strong></div>
-      <div><span class="eyebrow">Documentation</span><strong>${(p.gallery||[]).length} development ${(p.gallery||[]).length===1?'image':'images'} · GitHub source</strong></div>
+      <div><span class="eyebrow">Documentation</span><strong>${(p.gallery||[]).length} development ${(p.gallery||[]).length===1?'image':'images'} · Case study</strong></div>
     </section>
     <section class="shell section case-study-story" aria-label="Project narrative">
       <article id="challenge" class="case-study-chapter">

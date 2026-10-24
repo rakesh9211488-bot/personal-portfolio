@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T14:40:50.725Z",
+  "generatedAt": "2026-10-24T22:14:45.436Z",
   "repositories": [
     {
       "owner": "rakesh9211488-bot",
@@ -13,31 +13,11 @@
     },
     {
       "owner": "rakesh9211488-bot",
-      "name": "CareerOrbit",
-      "url": "https://github.com/rakesh9211488-bot/CareerOrbit",
-      "description": "AI-assisted career workspace for private CV analysis, job matching, reviewed application drafts and tracking",
-      "language": "TypeScript",
-      "updatedAt": "2026-10-12T00:40:40Z",
-      "archived": false,
-      "fork": false
-    },
-    {
-      "owner": "rakesh9211488-bot",
       "name": "rakesh9211488-bot",
       "url": "https://github.com/rakesh9211488-bot/rakesh9211488-bot",
       "description": "",
       "language": "",
       "updatedAt": "2026-10-12T00:20:02Z",
-      "archived": false,
-      "fork": false
-    },
-    {
-      "owner": "rakesh9211488-bot",
-      "name": "TechFarming",
-      "url": "https://github.com/rakesh9211488-bot/TechFarming",
-      "description": "This is an open-source project, there are developer and enthusiast from different part of the world. Here we will be designing an agricultural e-commerce website with some technological functionalities.",
-      "language": "JavaScript",
-      "updatedAt": "2026-10-11T22:22:57Z",
       "archived": false,
       "fork": false
     },
