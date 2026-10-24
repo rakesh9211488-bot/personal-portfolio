@@ -411,3 +411,110 @@ img, video, svg { max-width: 100%; }
     to { opacity: 1; transform: translateY(0); }
   }
 }
+
+/* Phase 2 — editorial homepage polish */
+.home-page .hero-grid {
+  gap: clamp(30px, 4vw, 60px);
+}
+.home-page .hero-copy {
+  position: relative;
+  z-index: 1;
+}
+.home-page .hero-focus {
+  display: block;
+  width: fit-content;
+  margin-top: 16px;
+  padding: 7px 13px;
+  border: 1px solid #827293;
+  border-radius: 100px;
+  color: var(--lav);
+  font: 700 10px/1.5 Manrope, system-ui, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.home-page .hero h1 {
+  max-width: 780px;
+  text-wrap: balance;
+}
+.home-page .hero-copy p {
+  max-width: 590px;
+}
+.home-page .hero .actions .btn {
+  transition: transform .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.home-page .hero .actions .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #0003;
+}
+.home-page .portrait-wrap {
+  isolation: isolate;
+}
+.home-page .portrait {
+  border-radius: 2px;
+}
+.home-page .portrait-wrap:before {
+  transition: transform .3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .home-page .portrait-wrap:hover:before {
+    transform: translate(4px, -4px);
+  }
+}
+.home-page .hero-scroll-link {
+  color: var(--lav);
+  text-decoration: none;
+  font: 700 10px/1.5 Manrope,system-ui,sans-serif;
+  letter-spacing: .14em;
+  white-space: nowrap;
+}
+.home-page .hero-scroll-link:hover,
+.home-page .hero-scroll-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.home-page .section-head h2,
+.home-page .intro-panel h3 {
+  text-wrap: balance;
+}
+.home-page .experience-strip {
+  background: var(--paper);
+}
+.home-page .project {
+  border-radius: 3px;
+}
+@media (max-width: 850px) {
+  .home-page .hero-focus {
+    letter-spacing: .08em;
+  }
+}
+@media (max-width: 480px) {
+  .home-page .hero-focus {
+    font-size: 9px;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .home-page .hero .actions .btn {
+    min-height: 48px;
+  }
+  .home-page .hero-scroll-link {
+    font-size: 9px;
+    white-space: normal;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .home-page [data-reveal].reveal-prep {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  .home-page [data-reveal].reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero .actions .btn,
+  .home-page .portrait-wrap:before {
+    transition: none;
+  }
+}
