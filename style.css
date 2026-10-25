@@ -885,3 +885,20 @@ img, video, svg { max-width: 100%; }
  .paper-figure-grid figure > a { height:auto; min-height:160px; }
  .paper-figure-grid img { max-height:360px; }
 }
+
+
+/* Selected research component: its own original figure and source caption. */
+.component-figure { margin:28px 0 0; display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); border:1px solid var(--line); background:var(--paper); }
+.component-image-link { display:flex; align-items:center; justify-content:center; min-height:280px; padding:20px; background:white; }
+.component-figure img { display:block; width:auto; height:auto; max-width:100%; max-height:410px; object-fit:contain; }
+.component-figure figcaption { padding:28px; align-self:center; min-width:0; }
+.component-figure figcaption strong { font-size:18px; }
+.component-figure figcaption p { margin:12px 0 18px; font-size:14px; }
+.component-figure figcaption a { color:var(--violet); font-size:13px; font-weight:800; }
+.component-figure figcaption span { display:block; margin-top:16px; color:var(--muted); font-size:12px; }
+.component-image-link:focus-visible { outline:3px solid var(--coral); outline-offset:3px; }
+@media(max-width:700px){
+ .component-figure { grid-template-columns:1fr; }
+ .component-image-link { min-height:180px; padding:12px; }
+ .component-figure figcaption { padding:20px; }
+}

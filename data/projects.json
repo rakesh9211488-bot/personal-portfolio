@@ -48,12 +48,7 @@
     ],
     "featured": true,
     "image": "/assets/research/rover-cad.jpeg",
-    "gallery": [
-      {
-        "src": "/assets/techfarming-workspace.webp",
-        "caption": "Later TechFarming web-platform extension running locally; this screenshot is separate from the 2023 rover research and does not verify a physical sensor connection."
-      }
-    ],
+    "gallery": [],
     "publication": {
       "title": "Design and Development of Rover with Robotic Arm-based Soil Moisture Sensor and Live Camera for Plant Health Monitoring",
       "authors": "K. Prem Sagar, Siripaka Rakesh, P. Sathish Reddy, Lungchuingam and G. Abhinav Kumar",
