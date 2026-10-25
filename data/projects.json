@@ -48,7 +48,28 @@
     ],
     "featured": true,
     "image": "/assets/research/rover-cad.jpeg",
-    "gallery": [],
+    "gallery": [
+      {
+        "src": "/assets/techfarming/overview.webp",
+        "caption": "Current overview page: navigation into the sensor workspace and the agricultural research."
+      },
+      {
+        "src": "/assets/techfarming/workspace-entry.webp",
+        "caption": "Workspace and research entry points, with the scope of sensing and plant-monitoring integrations explained."
+      },
+      {
+        "src": "/assets/techfarming/devices.webp",
+        "caption": "Device-registration workspace with received-report status and device controls. Software Test Sensor is a software-test device; this screenshot does not demonstrate calibrated field readings."
+      },
+      {
+        "src": "/assets/techfarming/research-method.webp",
+        "caption": "Interactive research-method explorer explaining the six stages of the paper. Hardware integration is marked as pending."
+      },
+      {
+        "src": "/assets/techfarming/publication.webp",
+        "caption": "Publication details, author credits, source links and the next integration milestone."
+      }
+    ],
     "publication": {
       "title": "Design and Development of Rover with Robotic Arm-based Soil Moisture Sensor and Live Camera for Plant Health Monitoring",
       "authors": "K. Prem Sagar, Siripaka Rakesh, P. Sathish Reddy, Lungchuingam and G. Abhinav Kumar",
@@ -167,6 +188,8 @@
           "page": "245"
         }
       ]
-    }
+    },
+    "galleryTitle": "Current web platform",
+    "galleryIntro": "Screenshots of the current local TechFarming application: the supporting software extension to the 2023 research project."
   }
 ]

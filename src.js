@@ -65,7 +65,7 @@ function detail(p){
   const career=p.slug==='careerorbit';
   const scopeNote=career
     ? 'Development screenshots show local interfaces, configured workflows and database structures. They do not establish a production deployment or measured business impact.'
-    : 'The 2023 co-authored paper documents the academic rover and MATLAB study. The original figures show the paper’s design and MATLAB demonstrations; these figures do not establish a deployed classifier, current rover control or a verified physical sensor-to-website connection.';
+    : 'The 2023 co-authored paper documents the academic rover and MATLAB study. The original figures show the paper’s design and MATLAB demonstrations; the website screenshots document the later local application. These do not establish a deployed classifier, current rover control or a calibrated physical sensor-to-website connection.';
   return `<main id="main" class="case-study-page">
     <section class="shell page-head case-study-hero">
       <a href="/projects" class="back">← All projects</a>
@@ -127,9 +127,9 @@ function detail(p){
       </div>
     </section>
     ${(p.gallery||[]).length ? `<section class="section shell project-gallery case-study-evidence" id="evidence">
-      <span class="eyebrow">05 / Development evidence</span>
-      <h2>Inside the <em class="palette">project.</em></h2>
-      <p>Selected development screenshots with descriptive captions.</p>
+      <span class="eyebrow">05 / ${p.galleryTitle||'Development evidence'}</span>
+      <h2>${p.galleryTitle?'The current <em class="palette">web platform.</em>':'Inside the <em class="palette">project.</em>'}</h2>
+      <p>${p.galleryIntro||'Selected development screenshots with descriptive captions.'}</p>
       <div class="gallery-grid">${(p.gallery||[]).map(g=>`<figure><a href="${g.src}" target="_blank" rel="noopener noreferrer" aria-label="Open screenshot: ${g.caption}"><img src="${g.src}" alt="${g.caption}" loading="lazy"></a><figcaption>${g.caption}</figcaption></figure>`).join('')}</div>
       <aside class="case-study-scope"><strong>Evidence &amp; limitations</strong><p>${scopeNote}</p></aside>
     </section>` : ''}
@@ -255,5 +255,6 @@ document.addEventListener('click',e=>{
 history.scrollRestoration='manual';
 window.addEventListener('popstate',()=>updateRoute(history.state?.scrollY??0));
 render();
+
 
 
