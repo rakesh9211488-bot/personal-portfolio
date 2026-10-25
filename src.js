@@ -35,10 +35,10 @@ function projectNodes(p){
     {title:'Supabase',description:'Database tables and CV document storage were configured to support the application workflow.'}
   ];
   return [
-    {title:'Sensor prototype',description:'The academic project involved a collaborative agriculture-monitoring concept using physical sensor components.'},
-    {title:'Hardware work',description:'Hardware and software tasks were explored in a two-person project, including coordination and prototype-related work.'},
-    {title:'Application data flow',description:'Application-side data movement and testing were part of the project and subsequent platform improvements.'},
-    {title:'Web platform',description:'Later enhancements involved the supporting web application. Live connectivity between physical sensors and the web platform has not been verified.'}
+    {title:'Rover & robotic arm',description:'The 2023 research paper describes remote rover movement and a robotic arm positioning a soil-moisture probe. This is the academic hardware stage, separate from current website control.'},
+    {title:'Camera & plant images',description:'The paper describes a live camera for plant monitoring and cotton-leaf image acquisition. A live camera feed is not an active feature of the current web platform.'},
+    {title:'MATLAB classification',description:'The research pipeline uses K-means segmentation, GLCM texture features and SVM classification. The paper shows MATLAB results; no independently verified accuracy or deployed classifier is claimed here.'},
+    {title:'Later web extension',description:'React, Express and MySQL support accounts, registered devices and validated sensor-report history. End-to-end integration with the original rover still requires verification.'}
   ];
 }
 function detail(p){
@@ -46,7 +46,7 @@ function detail(p){
   const career=p.slug==='careerorbit';
   const scopeNote=career
     ? 'Development screenshots show local interfaces, configured workflows and database structures. They do not establish a production deployment or measured business impact.'
-    : 'This case study covers a collaborative sensor prototype and later web-platform work. The screenshots do not verify a live sensor-to-website connection.';
+    : 'The 2023 co-authored paper documents the academic rover and MATLAB study. The screenshot shows the later web extension. Neither establishes a deployed classifier, current rover control or a verified physical sensor-to-website connection.';
   return `<main id="main" class="case-study-page">
     <section class="shell page-head case-study-hero">
       <a href="/projects" class="back">← All projects</a>
@@ -60,7 +60,7 @@ function detail(p){
       </div>
     </section>
     <nav class="shell case-study-nav" aria-label="On this project">
-      <a href="#challenge">Challenge</a><a href="#approach">Approach</a><a href="#contribution">My contribution</a><a href="#components">Components</a><a href="#evidence">Evidence</a>
+      <a href="#challenge">Challenge</a><a href="#approach">Approach</a><a href="#contribution">My contribution</a><a href="#components">Components</a>${p.publication?'<a href="#publication">Publication</a>':''}<a href="#evidence">Evidence</a>
     </nav>
     <section class="shell case-study-overview" aria-label="Project at a glance">
       <div><span class="eyebrow">Area</span><strong>${p.category}</strong></div>
@@ -81,6 +81,13 @@ function detail(p){
         <p>${p.contribution}</p>
       </article>
     </section>
+    ${p.publication?`<section class="shell section case-study-story" id="publication" aria-labelledby="publication-title">
+      <article class="case-study-chapter">
+        <div><span class="eyebrow">Research publication / 2023</span><h2 id="publication-title">The academic foundation.</h2></div>
+        <div><h3>${p.publication.title}</h3><p>${p.publication.authors}</p><p>${p.publication.venue}</p><p>${p.publication.note}</p><div class="actions"><a class="btn btn-dark" href="${p.publication.url}" target="_blank" rel="noopener noreferrer">Journal article ↗</a><a class="btn btn-case-outline" href="${p.publication.pdfUrl}" target="_blank" rel="noopener noreferrer">Read research paper ↗</a></div></div>
+      </article>
+      ${(p.phases||[]).map(phase=>`<article class="case-study-chapter"><div><span class="eyebrow">Project evolution</span><h3>${phase.title}</h3></div><p>${phase.description}</p></article>`).join('')}
+    </section>`:''}
     <section class="case-study-map-section" id="components">
       <div class="shell">
         <div class="case-study-section-heading">

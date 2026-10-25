@@ -34,23 +34,42 @@
   {
     "slug": "techfarming",
     "title": "TechFarming",
-    "category": "IoT · Connected agriculture",
-    "summary": "A collaborative sensor-based agriculture prototype with supporting web-platform work.",
-    "problem": "Understanding agricultural conditions requires a reliable connection between physical sensors and useful digital information.",
-    "approach": "Worked in a two-person team across hardware, software and project coordination; contributed to later web-platform enhancements and application/data-flow testing.",
-    "contribution": "Hardware and software collaboration, coordination, testing and web-platform enhancement.",
+    "category": "Robotics · Plant-health research · Web platform",
+    "summary": "A B.Tech agricultural-rover research project, co-authored in IJESAT in 2023, followed by a connected-agriculture web-platform extension.",
+    "problem": "Soil-moisture checks and plant-health inspection can require repeated manual fieldwork. The academic project explored remote sensing and camera-based cotton-leaf disease classification.",
+    "approach": "The 2023 paper describes a remotely controlled rover with a robotic arm, soil-moisture sensor and live camera. Its MATLAB image-analysis pipeline uses K-means segmentation, GLCM features and SVM classification. Later web-platform work added accounts, device registration and sensor-report history.",
+    "contribution": "Co-author of the 2023 research paper and contributor to the B.Tech hardware/software project. Subsequently contributed to supporting web-platform enhancements, integration testing, troubleshooting and documentation. The publication describes the team’s work; it does not assign individual ownership of each subsystem.",
     "technologies": [
-      "IoT",
-      "Sensors",
-      "Web platform",
-      "Hardware prototyping"
+      "Robotics",
+      "Soil-moisture sensing",
+      "MATLAB (research)",
+      "K-means / GLCM / SVM",
+      "React / Express / MySQL (extension)"
     ],
     "featured": true,
     "image": "/assets/techfarming-workspace.webp",
     "gallery": [
       {
         "src": "/assets/techfarming-workspace.webp",
-        "caption": "TechFarming web workspace running locally; sensor hardware connectivity not verified."
+        "caption": "Later TechFarming web-platform extension running locally; this screenshot is separate from the 2023 rover research and does not verify a physical sensor connection."
+      }
+    ],
+    "publication": {
+      "title": "Design and Development of Rover with Robotic Arm-based Soil Moisture Sensor and Live Camera for Plant Health Monitoring",
+      "authors": "K. Prem Sagar, Siripaka Rakesh, P. Sathish Reddy, Lungchuingam and G. Abhinav Kumar",
+      "venue": "IJESAT · Volume 23, Issue 5 · 2023 · pp. 233–246",
+      "url": "https://www.ijesat.com/archivesa_view.php?pid=341",
+      "pdfUrl": "https://www.ijesat.com/ijesat/files/V23I5027_1703827757.pdf",
+      "note": "The paper documents a team research prototype and MATLAB demonstrations. It does not establish that the current web application runs the classifier, controls the rover or receives live readings from the original hardware."
+    },
+    "phases": [
+      {
+        "title": "2023 · Academic rover research",
+        "description": "Robotic-arm soil-moisture sensing, live-camera plant monitoring and a MATLAB cotton-leaf classification pipeline, documented in the co-authored paper."
+      },
+      {
+        "title": "Later · Web-platform extension",
+        "description": "React/Express/MySQL account and device workflows, validated reporting APIs and reading history. Physical hardware integration and classifier deployment require separate verification."
       }
     ]
   }
