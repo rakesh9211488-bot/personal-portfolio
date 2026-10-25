@@ -902,3 +902,9 @@ img, video, svg { max-width: 100%; }
  .component-image-link { min-height:180px; padding:12px; }
  .component-figure figcaption { padding:20px; }
 }
+
+.project-search-controls { display:flex; align-items:end; flex-wrap:wrap; gap:16px; margin-top:24px; }
+.project-search-controls label { display:flex; flex-direction:column; gap:8px; font-size:12px; font-weight:800; min-width:0; flex:1 1 240px; max-width:350px; }
+.project-search-controls .search { width:100%; min-width:0; font-size:14px; font-weight:400; min-height:50px; }
+.project-search-controls button { min-height:50px; }
+@media(max-width:480px){.project-search-controls label { max-width:none; flex-basis:100%; }.project-search-controls button { width:100%; justify-content:center; }}

@@ -29,6 +29,17 @@
         "src": "/assets/careerorbit-schema.webp",
         "caption": "Excerpt of Supabase table structure used in the project."
       }
+    ],
+    "categories": [
+      "Automation",
+      "Web platforms"
+    ],
+    "skills": [
+      "n8n",
+      "Supabase",
+      "APIs",
+      "Git",
+      "GitHub"
     ]
   },
   {
@@ -47,7 +58,7 @@
       "React / Express / MySQL (extension)"
     ],
     "featured": true,
-    "image": "/assets/research/rover-cad.jpeg",
+    "image": "/assets/techfarming/overview.webp",
     "gallery": [
       {
         "src": "/assets/techfarming/overview.webp",
@@ -88,7 +99,7 @@
         "description": "React/Express/MySQL account and device workflows, validated reporting APIs and reading history. Physical hardware integration and classifier deployment require separate verification."
       }
     ],
-    "imageAlt": "Rover assembly CAD model reproduced from the 2023 TechFarming research paper, page 243",
+    "imageAlt": "Current TechFarming website overview with sensor workspace and research navigation",
     "research": {
       "intro": "An agricultural rover combining remote movement, robotic-arm soil-moisture sensing and camera-based cotton-leaf analysis. The details and original figures below come from the 2023 team publication.",
       "hardware": [
@@ -190,6 +201,23 @@
       ]
     },
     "galleryTitle": "Current web platform",
-    "galleryIntro": "Screenshots of the current local TechFarming application: the supporting software extension to the 2023 research project."
+    "galleryIntro": "Screenshots of the current local TechFarming application: the supporting software extension to the 2023 research project.",
+    "categories": [
+      "IoT",
+      "Robotics",
+      "Computer vision",
+      "Web platforms"
+    ],
+    "skills": [
+      "Arduino Uno",
+      "Soil-moisture sensing",
+      "MATLAB",
+      "K-means",
+      "GLCM",
+      "SVM",
+      "React",
+      "Express",
+      "MySQL"
+    ]
   }
 ]
