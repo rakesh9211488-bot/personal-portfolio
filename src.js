@@ -221,10 +221,22 @@ function closeMobileMenu(){
   menu.setAttribute('aria-label','Open navigation menu');
   menu.textContent='Menu ☰';
 }
+function scrollToSection(hash,behavior='instant'){
+  if(!hash)return false;
+  let id;
+  try{id=decodeURIComponent(hash.slice(1))}catch{return false}
+  const target=document.getElementById(id);
+  if(!target)return false;
+  target.setAttribute('tabindex','-1');
+  target.focus({preventScroll:true});
+  target.scrollIntoView({behavior,block:'start'});
+  return true;
+}
 function updateRoute(scrollY=0){
   const apply=()=>{
     render();
-    window.scrollTo(0,scrollY);
+    if(scrollToSection(location.hash))return;
+    window.scrollTo({top:scrollY,left:0,behavior:'instant'});
     const heading=document.querySelector('#main h1')||$('#main');
     if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}
   };
@@ -234,13 +246,16 @@ function updateRoute(scrollY=0){
 }
 function navigateTo(path){
   const destination=new URL(path,location.href);
-  if(destination.pathname+destination.search===location.pathname+location.search){
-    closeMobileMenu();
-    window.scrollTo({top:0,behavior:'smooth'});
+  const samePage=destination.pathname+destination.search===location.pathname+location.search;
+  history.replaceState({...history.state,scrollY:window.scrollY},'',location.href);
+  const next=destination.pathname+destination.search+destination.hash;
+  if(next!==location.pathname+location.search+location.hash){history.pushState({scrollY:0},'',next)}
+  closeMobileMenu();
+  if(samePage){
+    const behavior=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
+    if(!scrollToSection(destination.hash,behavior))window.scrollTo({top:0,left:0,behavior});
     return;
   }
-  history.replaceState({...history.state,scrollY:window.scrollY},'',location.href);
-  history.pushState({scrollY:0},'',destination.pathname+destination.search);
   updateRoute(0);
 }
 document.addEventListener('click',e=>{
@@ -248,10 +263,10 @@ document.addEventListener('click',e=>{
   const anchor=e.target.closest('a[href]');
   if(!anchor||anchor.hasAttribute('download')||(anchor.target&&anchor.target!=='_self'))return;
   const url=new URL(anchor.href,location.href);
-  if(url.origin!==location.origin||!['http:','https:'].includes(url.protocol)||url.hash||url.pathname.startsWith('/assets/'))return;
+  if(url.origin!==location.origin||!['http:','https:'].includes(url.protocol)||url.pathname.startsWith('/assets/'))return;
   e.preventDefault();
   if(anchor.closest('.modal'))closePalette(false);
-  navigateTo(url.pathname+url.search);
+  navigateTo(url.pathname+url.search+url.hash);
 });
 document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPalette()}
@@ -266,7 +281,10 @@ document.addEventListener('click',e=>{
 history.scrollRestoration='manual';
 window.addEventListener('popstate',()=>updateRoute(history.state?.scrollY??0));
 render();
-
+if(location.hash){
+  requestAnimationFrame(()=>scrollToSection(location.hash));
+  window.addEventListener('load',()=>scrollToSection(location.hash),{once:true});
+}
 
 
 
