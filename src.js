@@ -10,17 +10,17 @@ const nav=[['Home','/'],['Projects','/projects'],['About','/about'],['Expertise'
 function header(){const path=location.pathname.replace(/\/$/,'')||'/';return `<a class="skip" href="#main">Skip to content</a><header class="shell top"><a class="logo" href="/" aria-label="Rakesh Siripaka home">RS<span>.</span></a><nav id="nav" class="nav" aria-label="Main navigation">${nav.map(([n,p])=>`<a href="${p}"${(p==='/'?path==='/':path===p||path.startsWith(p+'/'))?' aria-current="page"':''}>${n}</a>`).join('')}<button id="cmd" class="btn btn-dark" aria-label="Open quick navigation search (Control or Command plus K)">Search ↗</button></nav><button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu">Menu ☰</button></header>`}
 function footer(){return `<footer class="dark"><div class="shell footer"><span>© ${new Date().getFullYear()} Rakesh Siripaka. Built with intention.</span><span><a href="${linked}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> &nbsp; · &nbsp; <a href="${git}" target="_blank" rel="noopener noreferrer">GitHub ↗</a> &nbsp; · &nbsp; <a href="mailto:${email}">Email ↗</a></span></div></footer>`}
 function projectCard(p,i){
-  const screenshotCount=(p.gallery||[]).length;
+  const screenshotCount=(p.gallery||[]).length + (p.research?.figures||[]).length;
   return `<a class="project project-case-card" href="/projects/${p.slug}" aria-label="View ${p.title} case study">
     <div class="project-art ${i%2?'farming':'orbit'}">
-      <img src="${p.image}" alt="${p.title} project interface preview" loading="lazy">
+      <img src="${p.image}" alt="${p.imageAlt||p.title+' project interface preview'}" loading="lazy">
       <span class="project-art-label">0${i+1} / SELECTED WORK · ${p.title}</span>
     </div>
     <div class="project-body">
       <div class="project-kicker"><span>${p.category}</span><span>CASE STUDY</span></div>
       <h3>${p.title}</h3>
       <p>${p.summary}</p>
-      <div class="project-evidence"><span>Personal contribution described</span><span>${screenshotCount} development ${screenshotCount===1?'image':'images'}</span></div>
+      <div class="project-evidence"><span>Personal contribution described</span><span>${screenshotCount} project ${screenshotCount===1?'image':'images'}</span></div>
       <div class="project-foot"><span>${p.technologies.slice(0,3).join(' · ')}</span><span>VIEW CASE STUDY ↗</span></div>
     </div>
   </a>`
@@ -35,18 +35,29 @@ function projectNodes(p){
     {title:'Supabase',description:'Database tables and CV document storage were configured to support the application workflow.'}
   ];
   return [
-    {title:'Rover & robotic arm',description:'The 2023 research paper describes remote rover movement and a robotic arm positioning a soil-moisture probe. This is the academic hardware stage, separate from current website control.'},
+    {title:'Arduino Uno & rover',description:'Figure 1 names Arduino Uno as the controller. The 2023 research paper describes remote rover movement and a robotic arm positioning a soil-moisture probe. This is the academic hardware stage, separate from current website control.'},
     {title:'Camera & plant images',description:'The paper describes a live camera for plant monitoring and cotton-leaf image acquisition. A live camera feed is not an active feature of the current web platform.'},
     {title:'MATLAB classification',description:'The research pipeline uses K-means segmentation, GLCM texture features and SVM classification. The paper shows MATLAB results; no independently verified accuracy or deployed classifier is claimed here.'},
     {title:'Later web extension',description:'React, Express and MySQL support accounts, registered devices and validated sensor-report history. End-to-end integration with the original rover still requires verification.'}
   ];
+}
+function researchEvidence(p){
+  const r=p.research;
+  if(!r)return '';
+  return `<section class="shell section paper-research" id="research-details" aria-labelledby="research-details-title">
+    <div class="case-study-section-heading"><span class="eyebrow">From the original paper</span><h2 id="research-details-title">The rover. The method.<br><em class="palette">The original evidence.</em></h2><p>${r.intro}</p></div>
+    <div class="paper-hardware"><h3>Hardware documented in the paper</h3><div class="paper-hardware-grid">${r.hardware.map(h=>`<article><h4>${h.name}</h4><p>${h.detail}</p><span class="paper-source">${h.source}</span></article>`).join('')}</div></div>
+    <div class="paper-method"><h3>Cotton-leaf analysis in MATLAB</h3><ol>${r.steps.map(step=>`<li><h4>${step.title}</h4><p>${step.detail}</p></li>`).join('')}</ol><p class="paper-feature-note">Reported features: energy, entropy, homogeneity, contrast, mean, standard deviation, RMS, variance, smoothness, kurtosis, skewness, IDM and correlation (p. 237).</p></div>
+    <div class="paper-figures"><h3>Original research figures</h3><p>Extracted from the supplied publication without visual alteration. Select any image to inspect its original resolution.</p><div class="paper-figure-grid">${r.figures.map(g=>`<figure><a href="${g.src}" target="_blank" rel="noopener noreferrer" aria-label="Open original figure: ${g.title}"><img src="${g.src}" alt="${g.caption}" loading="lazy"></a><figcaption><strong>${g.title}</strong><p>${g.caption}</p><a href="${p.publication.pdfUrl}#page=${Number(g.page)-232}" target="_blank" rel="noopener noreferrer">Source: paper p. ${g.page} ↗</a></figcaption></figure>`).join('')}</div></div>
+    <aside class="case-study-scope"><strong>Source and interpretation</strong><p>Figures: ${p.publication.authors}. ${p.publication.venue}. See the linked publication for the full research context. The hardware description follows the proposed method and design illustrations.</p><p>${r.limits}</p></aside>
+  </section>`;
 }
 function detail(p){
   const nodes=projectNodes(p);
   const career=p.slug==='careerorbit';
   const scopeNote=career
     ? 'Development screenshots show local interfaces, configured workflows and database structures. They do not establish a production deployment or measured business impact.'
-    : 'The 2023 co-authored paper documents the academic rover and MATLAB study. The screenshot shows the later web extension. Neither establishes a deployed classifier, current rover control or a verified physical sensor-to-website connection.';
+    : 'The 2023 co-authored paper documents the academic rover and MATLAB study. The original figures show the paper’s design and MATLAB demonstrations; the development screenshot shows the later web extension. Neither establishes a deployed classifier, current rover control or a verified physical sensor-to-website connection.';
   return `<main id="main" class="case-study-page">
     <section class="shell page-head case-study-hero">
       <a href="/projects" class="back">← All projects</a>
@@ -60,12 +71,12 @@ function detail(p){
       </div>
     </section>
     <nav class="shell case-study-nav" aria-label="On this project">
-      <a href="#challenge">Challenge</a><a href="#approach">Approach</a><a href="#contribution">My contribution</a><a href="#components">Components</a>${p.publication?'<a href="#publication">Publication</a>':''}<a href="#evidence">Evidence</a>
+      <a href="#challenge">Challenge</a><a href="#approach">Approach</a><a href="#contribution">My contribution</a><a href="#components">Components</a>${p.publication?'<a href="#publication">Publication</a>':''}${p.research?'<a href="#research-details">Research figures</a>':''}<a href="#evidence">Evidence</a>
     </nav>
     <section class="shell case-study-overview" aria-label="Project at a glance">
       <div><span class="eyebrow">Area</span><strong>${p.category}</strong></div>
       <div><span class="eyebrow">My work</span><strong>${career?'Workflow configuration & testing':'Collaborative prototyping & testing'}</strong></div>
-      <div><span class="eyebrow">Documentation</span><strong>${(p.gallery||[]).length} development ${(p.gallery||[]).length===1?'image':'images'} · Case study</strong></div>
+      <div><span class="eyebrow">Documentation</span><strong>${(p.gallery||[]).length + (p.research?.figures||[]).length} project images · Case study</strong></div>
     </section>
     <section class="shell section case-study-story" aria-label="Project narrative">
       <article id="challenge" class="case-study-chapter">
@@ -88,6 +99,7 @@ function detail(p){
       </article>
       ${(p.phases||[]).map(phase=>`<article class="case-study-chapter"><div><span class="eyebrow">Project evolution</span><h3>${phase.title}</h3></div><p>${phase.description}</p></article>`).join('')}
     </section>`:''}
+    ${researchEvidence(p)}
     <section class="case-study-map-section" id="components">
       <div class="shell">
         <div class="case-study-section-heading">
@@ -234,3 +246,4 @@ document.addEventListener('click',e=>{
 history.scrollRestoration='manual';
 window.addEventListener('popstate',()=>updateRoute(history.state?.scrollY??0));
 render();
+

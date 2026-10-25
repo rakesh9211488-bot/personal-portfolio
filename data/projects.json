@@ -47,7 +47,7 @@
       "React / Express / MySQL (extension)"
     ],
     "featured": true,
-    "image": "/assets/techfarming-workspace.webp",
+    "image": "/assets/research/rover-cad.jpeg",
     "gallery": [
       {
         "src": "/assets/techfarming-workspace.webp",
@@ -71,6 +71,107 @@
         "title": "Later · Web-platform extension",
         "description": "React/Express/MySQL account and device workflows, validated reporting APIs and reading history. Physical hardware integration and classifier deployment require separate verification."
       }
-    ]
+    ],
+    "imageAlt": "Rover assembly CAD model reproduced from the 2023 TechFarming research paper, page 243",
+    "research": {
+      "intro": "An agricultural rover combining remote movement, robotic-arm soil-moisture sensing and camera-based cotton-leaf analysis. The details and original figures below come from the 2023 team publication.",
+      "hardware": [
+        {
+          "name": "Arduino Uno",
+          "detail": "Controller named in the proposed system block diagram.",
+          "source": "Figure 1 · p. 236"
+        },
+        {
+          "name": "Robotic arm + soil-moisture sensor",
+          "detail": "Positions the probe and inserts it into the soil for a moisture measurement. The paper discusses capacitive or resistive sensing without naming a specific sensor model.",
+          "source": "Proposed method · pp. 235–236"
+        },
+        {
+          "name": "Live camera",
+          "detail": "Captures plant images for monitoring and subsequent analysis; the camera model and interface are not specified.",
+          "source": "Figure 1 and proposed method · p. 236"
+        },
+        {
+          "name": "Left/right motors + motor driver",
+          "detail": "Provide remotely controlled rover movement. The block diagram shows a 12 V DC supply for the motor stage.",
+          "source": "Figure 1 · p. 236"
+        },
+        {
+          "name": "Six-channel transmitter + receiver",
+          "detail": "Remote-control link described for operating the rover. No transmitter or receiver part number is given.",
+          "source": "Proposed method · p. 235"
+        },
+        {
+          "name": "Power supplies",
+          "detail": "The diagram labels 12 V DC and 5 V DC supplies. A CAD image depicts a battery marked 12 V 7.2 Ah; this is a design illustration, not a measured runtime result.",
+          "source": "Figure 1 · p. 236; CAD illustration · p. 243"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Acquire cotton-leaf images",
+          "detail": "Camera images are stored in JPG format for the image-analysis stage."
+        },
+        {
+          "title": "Preprocess the images",
+          "detail": "The paper describes median filtering and conversion from RGB to grayscale."
+        },
+        {
+          "title": "Segment with K-means",
+          "detail": "Group pixels into clusters to isolate regions showing disease symptoms."
+        },
+        {
+          "title": "Extract image features",
+          "detail": "Use GLCM-based texture analysis and statistical features. The paper lists 13 discriminating features."
+        },
+        {
+          "title": "Classify with SVM",
+          "detail": "Apply multiclass support vector machine classification to the extracted cotton-leaf features."
+        },
+        {
+          "title": "Inspect MATLAB output",
+          "detail": "The reported demonstrations use MATLAB R2014a. The figures show cluster selection and the MATLAB execution environment."
+        }
+      ],
+      "limits": "The publication does not provide firmware pin assignments, exact sensor/camera part numbers, a verified field-accuracy benchmark or evidence that the later website controls the rover. These require original hardware records and separate validation.",
+      "figures": [
+        {
+          "src": "/assets/research/rover-cad.jpeg",
+          "title": "Rover assembly",
+          "caption": "Original CAD assembly illustration from the 3D-design results. This is a design model, not a photograph of an operating rover.",
+          "page": "243"
+        },
+        {
+          "src": "/assets/research/rover-system.png",
+          "title": "Proposed hardware architecture",
+          "caption": "Figure 1: Arduino Uno, robotic arm, soil-moisture sensor, camera, motors, driver and radio-control link.",
+          "page": "236"
+        },
+        {
+          "src": "/assets/research/classification-workflow.png",
+          "title": "Disease-analysis workflow",
+          "caption": "Figure 2: the paper’s proposed disease identification and classification system.",
+          "page": "237"
+        },
+        {
+          "src": "/assets/research/rover-power.jpeg",
+          "title": "Power-system design view",
+          "caption": "Original CAD detail showing the battery placement and its illustrated rating.",
+          "page": "243"
+        },
+        {
+          "src": "/assets/research/leaf-analysis.jpeg",
+          "title": "Leaf image in MATLAB",
+          "caption": "Figure 5: disease-affected leaf displayed as an input to the paper’s image-processing demonstration.",
+          "page": "244"
+        },
+        {
+          "src": "/assets/research/matlab-results.jpeg",
+          "title": "MATLAB execution environment",
+          "caption": "Figure 8: the execution environment shown in the published software results.",
+          "page": "245"
+        }
+      ]
+    }
   }
 ]

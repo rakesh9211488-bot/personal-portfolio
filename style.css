@@ -852,3 +852,36 @@ img, video, svg { max-width: 100%; }
   .capability-card { transition: none; }
   .capability-card:hover { transform: none; }
 }
+
+
+/* Research evidence: original paper figures and documented component inventory. */
+.paper-research { scroll-margin-top: 24px; }
+.paper-research h3 { font: normal clamp(27px,3vw,38px)/1.2 'DM Serif Display',Georgia,serif; margin: 0 0 24px; }
+.paper-hardware, .paper-method, .paper-figures { margin: 48px 0; }
+.paper-hardware-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.paper-hardware-grid article { border:1px solid var(--line); background:white; padding:24px; }
+.paper-research h4 { font-size:16px; line-height:1.5; margin:0 0 10px; }
+.paper-research p { color:var(--muted); }
+.paper-hardware-grid p { margin:0 0 18px; font-size:14px; }
+.paper-source { color:var(--violet); font-size:12px; font-weight:800; }
+.paper-method { padding:32px; background:#eee9f2; }
+.paper-method ol { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 40px; padding-left:24px; }
+.paper-method li { padding-left:8px; }
+.paper-method li::marker { color:var(--violet); font-weight:800; }
+.paper-method p { margin:0; font-size:14px; }
+.paper-method .paper-feature-note { border-top:1px solid var(--line); padding-top:20px; margin-top:24px; }
+.paper-figure-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:26px; }
+.paper-figure-grid figure { margin:0; border:1px solid var(--line); background:white; min-width:0; }
+.paper-figure-grid figure > a { display:flex; align-items:center; justify-content:center; height:310px; padding:16px; background:#f7f5f8; }
+.paper-figure-grid img { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
+.paper-figure-grid figcaption { padding:22px; }
+.paper-figure-grid figcaption strong { font-size:16px; }
+.paper-figure-grid figcaption p { font-size:13px; margin:10px 0; }
+.paper-figure-grid figcaption a { font-size:12px; font-weight:800; color:var(--violet); }
+.paper-figure-grid a:focus-visible { outline:3px solid var(--coral); outline-offset:3px; }
+@media(max-width:700px) {
+ .paper-hardware-grid,.paper-figure-grid,.paper-method ol { grid-template-columns:1fr; }
+ .paper-method { padding:24px; }
+ .paper-figure-grid figure > a { height:auto; min-height:160px; }
+ .paper-figure-grid img { max-height:360px; }
+}
